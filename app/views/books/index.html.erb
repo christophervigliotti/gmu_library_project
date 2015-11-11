@@ -1,5 +1,6 @@
-<h1>Books</h1>
-<p>Available as of <%= formatted_time(@available_at) %></p>
+<h1>Amazombie</h1>
+<h2>Books</h2>
+<p><%= @books.size %> available as of <%= formatted_time(@available_at) %></p>
 <ol>
   <% @books.each do |book| %>
       <li>
