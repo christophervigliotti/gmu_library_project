@@ -29,7 +29,7 @@ class BookTest < ActiveSupport::TestCase
     assert_equal 440, found_book.pages
   end
 
-  test "update from a fixture" do
+  test 'update from a fixture' do
     book = books(:ender)
     delta = 0.001
     assert_in_delta 4.83, book.price, delta
