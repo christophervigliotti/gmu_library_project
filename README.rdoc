@@ -5,3 +5,11 @@ Read. Me. Or. Don't.
         deploy the app in a specific environment / mode
 
             RAILS_ENV=production rails server
+
+    Questions / Things To Research
+
+        routes
+
+            routes that begin with "patch"
+
+            understand route prefixes/keywords like get and patch
