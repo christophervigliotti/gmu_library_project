@@ -1,5 +1,6 @@
 Read. Me. Or. Don't.
 
+<<<<<<< HEAD
     Quick Tips
 
         deploy the app in a specific environment / mode
@@ -13,6 +14,5 @@ Read. Me. Or. Don't.
             routes that begin with "patch"
 
             understand route prefixes/keywords like get and patch
-
-
-
+    
+    editing this file via Geany IDE on the Kano  Raspberry Pi.  Woot!
