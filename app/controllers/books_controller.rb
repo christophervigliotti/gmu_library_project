@@ -36,14 +36,14 @@ class BooksController < ApplicationController
       # redirect_to @book
       redirect_to @book, notice: "#{@book.title} was updated!"
     else
-      render :update
+      render :edit
     end
   end
 
   def destroy
     # replaced by the before_action @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_url
+    redirect_to books_url, notice: "#{@book.title} was DESTROYED HA HA HA!!!"
   end
 
   private
