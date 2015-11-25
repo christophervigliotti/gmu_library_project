@@ -17,8 +17,12 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to @book
+    if @book.save
+      # redirect_to @book
+      redirect_to @book, notice: "#{@book.title} was created!"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -27,8 +31,12 @@ class BooksController < ApplicationController
 
   def update
     # replaced by the before_action @book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to @book
+    if @book.update(book_params)
+      # redirect_to @book
+      redirect_to @book, notice: "#{@book.title} was updated!"
+    else
+      render :new
+    end
   end
 
   def destroy
