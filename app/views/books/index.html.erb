@@ -1,4 +1,3 @@
-<%= render '/title' %>
 <h2>Books</h2>
 <p><%= @books.size %> available as of <%= formatted_time(@available_at) %></p>
 <ol>
@@ -9,4 +8,3 @@
       </li>
   <% end %>
 </ol>
-<%= link_to 'New Book', new_book_path %>
