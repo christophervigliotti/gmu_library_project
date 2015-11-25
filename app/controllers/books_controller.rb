@@ -36,7 +36,7 @@ class BooksController < ApplicationController
       # redirect_to @book
       redirect_to @book, notice: "#{@book.title} was updated!"
     else
-      render :new
+      render :update
     end
   end
 
