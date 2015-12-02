@@ -1,18 +1,174 @@
-Read. Me. Or. Don't.
+FINAL PROJECT
 
-<<<<<<< HEAD
-    Quick Tips
+Requirements
 
-        deploy the app in a specific environment / mode
+    Use Cases
 
-            RAILS_ENV=production rails server
+        Basic user
 
-    Questions / Things To Research
+            Log on / log off
+            List all books (paginated)
+            Show book information
+            Search books (by title, author, or ISBN)
+            Reserve book
+            Return book
+            View reservations
+            List authors
+            Show author (including list of publications)
 
-        routes
+        Admin user
 
-            routes that begin with "patch"
+            All basic user use cases
+            Create, update, delete book
+            View overdue books
 
-            understand route prefixes/keywords like get and patch
-    
-    editing this file via Geany IDE on the Kano  Raspberry Pi.  Woot!
+    Models
+
+        Book
+
+            Overview
+
+                The Book model contains information about the library's books. It will be implemented as an ActiveRecord model.
+
+            Attributes
+
+                id - integer (PK)
+                isbn - string
+                title - string
+                author_id - integer (FK)
+                genre - string
+                abstract - text
+                pages - integer
+                image_cover_url - string
+                published_on - date
+                total_in_library - integer
+                created_at - datetime
+                updated_at - datetime
+
+                Authors
+
+                    The author_id attribute is a foreign key, which associates a book with the person who authored it. In this simple application, a book only has one author. (This means we have a one-to-many relationship, where an Author has many Books, and a Book belongs to an Author.)
+                    You will provide a dropdown box for users to select an author when creating a book.
+
+            Associations
+
+                Belongs to author
+
+                Has many reservations
+
+                    Dependents should be automatically destroyed if book is destroyed
+
+                    Validations
+
+                        Required
+                            isbn, title, abstract, pages, genre, published_on, total_in_library, author
+
+                        Length
+                            abstract, minimum 15 characters
+
+                        Numericality
+                            pages, total_in_library - positive integers
+
+                        Inclusion
+                            genre, author (must be a valid author)
+
+                    Attributes
+
+        User
+
+            Overview
+
+                The User model describes a user, including whether the user has administrative privileges. It will be used to authenticate users during the logon process, and to determine which actions a user can take in the library system (e.g. can they create or edits books?). A user has many books reserved through the reservation model. It will be implemented as an ActiveRecord model.
+
+            Attributes
+
+                id - integer (PK)
+                name - string
+                user_id - string
+                password_digest - string (*)
+                admin - boolean
+                created_at - datetime
+                updated_at - datetime
+
+                (*) For this app, we will store the password in the database using a digest password.
+
+                Passwords
+
+                    We do not want user passwords to be stored "in the clear" in our database
+
+                    Instead, you need to store passwords using a digest
+
+                        See "Task I: Logging In" in the Agile Web Development with Rails 4 book for an example, or Google for "rails has_secure_password"
+
+            Associations
+
+                Has many reservations
+
+                    Dependents should be automatically destroyed if user is destroyed
+
+                Has many books
+
+                    Through reservations (this means you will use Rails' has_many :through feature)
+
+        Reservation
+
+            Overview
+
+                The Reservation model describes which book is reserved by which user. For example, when a user reserves a book, a new Reservation is created that links the user and book together. This will be implemented as an ActiveRecord model.
+
+            Special Note
+
+                The library should only allow a book to be reserved if the number of outstanding reservations is less than the total_in_library for the book. The book show page should display the number available to reserve. A User should not be able to reserve more than one of a specific book at a time. When a user tries to reserve a book, the number available should be re-checked since it could have changed while a user sat idle on the page.
+
+            Attributes
+
+                id - integer
+                reserved_on - date
+                due_on - date(*)
+                user_id - integer (FK)
+                book_id - integer (FK)
+                created_at - datetime
+                updated_at - datetime
+
+                (*) When a new reservation is created, you should set the due_on date automatically to some number of days in the future, e.g. 7 days from the time it is reserved. Hint: Use the before_create hook method to set both reserved_on and due_on
+
+            Associations
+
+                Belongs to user
+                Belongs to book
+
+        Author
+
+            Overview
+
+                The Author model contains information about book authors. In our simple library, a book has only one author (but this does not preclude an author from authoring many books).
+
+            Attributes
+
+                id - integer
+                name - string
+                dob - date
+                nationality - string
+                awards - string
+                biography - string
+                image_url - string
+
+            Associations
+
+                Has many books
+
+            Validations
+
+                Required
+
+                    name, dob, nationality, biography, image_url
+
+                Length
+
+                    biography, minimum 15 characters
+
+    Security
+
+        We didn't cover security in detail by the end of class 4, but we did cover preventing SQL injection attacks, so you must guard against them for this project!
+
+        If your application is susceptible to SQL injection attacks, you will automatically lose 25 points.
