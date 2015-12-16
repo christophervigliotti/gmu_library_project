@@ -26,6 +26,25 @@ Requirements
 
         Book
 
+            Build It!
+
+                # with pre-defined primary_key and foreign keys (as-needed)
+                rails generate model book id:primary_key isbn:string title:string author_id:integer genre:string abstract:text pages:integer image_cover_url:string published_on:date total_in_library:integer created_at:datetime updated_at:datetime
+                rails generate controller books
+
+                #rollback
+                rails d controller books
+                rails d model book
+                rails d scaffold book
+
+                # add relationship definitions to model
+                belongs_to :author
+                has_many :reservations
+
+                # add validation rules
+
+                # add constants, other fancy stuff
+
             Overview
 
                 The Book model contains information about the library's books. It will be implemented as an ActiveRecord model.
@@ -76,6 +95,25 @@ Requirements
 
         User
 
+            Build It!
+
+                # with pre-defined primary_key and foreign keys (as-needed)
+                rails generate model user id:primary_key name:string user_id:string password:digest admin:boolean created_at:datetime updated_at:datetime
+                rails generate controller users
+
+                #rollback
+                rails d controller users
+                rails d model user
+                rails d scaffold user
+
+                # add relationship definitions to model
+                has_many :books
+                has_many :reservations
+
+                # add validation rules
+                
+                # add constants, other fancy stuff
+
             Overview
 
                 The User model describes a user, including whether the user has administrative privileges. It will be used to authenticate users during the logon process, and to determine which actions a user can take in the library system (e.g. can they create or edits books?). A user has many books reserved through the reservation model. It will be implemented as an ActiveRecord model.
@@ -112,6 +150,23 @@ Requirements
 
         Reservation
 
+            Build It!
+
+                # with pre-defined primary_key and foreign keys (as-needed)
+                rails generate model reservation id:primary_key reserved_on:date due_on:date user_id:integer book_id:integer created_at:datetime updated_at:datetime
+                rails generate controller reservations
+
+                #rollback
+                rails d controller reservations
+                rails d model reservation
+                rails d scaffold reservation
+
+                # add relationship definitions to model
+                
+                # add validation rules
+                
+                # add constants, other fancy stuff
+
             Overview
 
                 The Reservation model describes which book is reserved by which user. For example, when a user reserves a book, a new Reservation is created that links the user and book together. This will be implemented as an ActiveRecord model.
@@ -138,6 +193,24 @@ Requirements
                 Belongs to book
 
         Author
+
+            Build It!
+
+                # with pre-defined primary_key and foreign keys (as-needed)
+                rails generate model author id:integer name:string dob:date nationality:string awards:string biography:string image_url:string
+                rails generate controller authors
+
+                # rollback
+                rails d controller books
+                rails d model book
+                rails d scaffold book
+
+                # add relationship definitions to model
+
+                # add validation rules
+
+                # add constants, other fancy stuff
+
 
             Overview
 
