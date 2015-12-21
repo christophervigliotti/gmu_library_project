@@ -11,15 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111015908) do
+ActiveRecord::Schema.define(version: 20151221142544) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string   "name"
+    t.date     "dob"
+    t.string   "nationality"
+    t.string   "awards"
+    t.text     "biography"
+    t.string   "image_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
     t.integer  "pages"
     t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "isbn"
+    t.string   "genre"
+    t.text     "abstract"
+    t.string   "image_cover_url"
+    t.date     "published_on"
+    t.integer  "total_in_library"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date     "reserved_on"
+    t.date     "due_on"
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "user_id"
+    t.string   "password_digest"
+    t.boolean  "admin"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

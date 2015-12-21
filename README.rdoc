@@ -1,5 +1,15 @@
 FINAL PROJECT
 
+Progress
+
+    Models
+
+        Created or modified as-needed
+        Associations defined
+        Validations added to model
+        Create crud for all entities
+        create seeds
+
 Requirements
 
     Use Cases
@@ -30,7 +40,9 @@ Requirements
 
                 # with pre-defined primary_key and foreign keys (as-needed)
                 rails generate model book id:primary_key isbn:string title:string author_id:integer genre:string abstract:text pages:integer image_cover_url:string published_on:date total_in_library:integer created_at:datetime updated_at:datetime
+                # existing entity...new columns handled via rake task
                 rails generate controller books
+                # existing entity, skipping for now
 
                 #rollback
                 rails d controller books
