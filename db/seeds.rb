@@ -4,38 +4,43 @@ toklien = Author.where(name: 'Jay Arrrgh Arrrgh Tolkien').first_or_create!(
     dob: Date.new(1972,12,31),
     nationality: 'English',
     biography: 'lorum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    image_url: 'http://cdn.timesofisrael.com/uploads/2013/12/tolkien.jpg')
-
+    image_url: 'http://cdn.timesofisrael.com/uploads/2013/12/tolkien.jpg'
+)
 rynd = Author.where(name: 'Ayn Rind').first_or_create!(
     name: 'Ayn Rind',
     dob: Date.new(1972,12,31),
     nationality: 'American',
     biography: 'lorum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    image_url: 'http://exiledonline.com/wp-content/uploads/2010/08/rand1-270x270.jpg')
+    image_url: 'http://exiledonline.com/wp-content/uploads/2010/08/rand1-270x270.jpg'
+)
 card = Author.where(name: 'Orson Scott Groening').first_or_create!(
     name: 'Orson Scott Groening',
     dob: Date.new(1972,12,31),
     nationality: 'Not Sure-merican',
     biography: 'lorum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    image_url: 'http://www.simpsonsarchive.com/bin/comics_artists_terry-delegeane.gif')
+    image_url: 'http://www.simpsonsarchive.com/bin/comics_artists_terry-delegeane.gif'
+)
 shakes = Author.where(name: 'Billy-Jack Shakespeare').first_or_create!(
     name: 'Billy-Jack Shakespeare',
     dob: Date.new(1972,12,31),
     nationality: 'English',
     biography: 'lorum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    image_url: 'http://a3.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE1ODA0OTcxNzgzMzkwNzMz.jpg')
+    image_url: 'http://a3.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE1ODA0OTcxNzgzMzkwNzMz.jpg'
+)
 kinny = Author.where(name: 'Not Kinny').first_or_create!(
     name: 'Not Kinny',
     dob: Date.new(1972,12,31),
     nationality: 'American',
     biography: 'lorumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    image_url: 'http://insidescoopsf.sfgate.com/files/2012/07/wimpy.-King-Features.jpg')
+    image_url: 'http://insidescoopsf.sfgate.com/files/2012/07/wimpy.-King-Features.jpg'
+)
 buddha = Author.where(name: 'Siddhartha Gautama').first_or_create!(
     name: 'Siddhartha Gautama',
     dob: Date.new(1972,12,31),
     nationality: 'Somewhere To The East',
     biography: 'lorumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    image_url: 'http://mysticmedusa.com/wp-content/uploads/2010/02/buddha3.jpg')
+    image_url: 'http://mysticmedusa.com/wp-content/uploads/2010/02/buddha3.jpg'
+)
 
 #books
 hob = Book.where(title: 'Hobbits Take The Long Way').first_or_create!(
@@ -49,7 +54,6 @@ hob = Book.where(title: 'Hobbits Take The Long Way').first_or_create!(
     published_on: '1968',
     total_in_library: 5
 )
-
 lotr1 = Book.where(title: 'Enough With The Rings: The Fellowship Of The Thing').first_or_create!(
     title:'Enough With The Rings: The Fellowship Of The Thing',
     author:toklien,

@@ -1,5 +1,7 @@
 class Reservation < ActiveRecord::Base
 
+  #self.primary_key = reservation_id
+
   belongs_to :book
   belongs_to :user
 

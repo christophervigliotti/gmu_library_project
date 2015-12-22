@@ -1,7 +1,7 @@
 class ModifyBooks < ActiveRecord::Migration
   def change
     add_column :books, :isbn, :string
-    # author_id
+    add_column :books, :author_id, :integer
     add_column :books, :genre, :string
     add_column :books, :abstract, :text
     add_column :books, :image_cover_url, :string

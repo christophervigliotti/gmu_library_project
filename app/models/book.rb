@@ -1,12 +1,12 @@
 class Book < ActiveRecord::Base
 
+  #self.primary_key = book_id
+
   has_one :author
-  has_many :reservations
+  #has_many :reservations
 
-  scope :bargains, -> { where('price < 10.00') }
-  scope :by, ->(author) { where('author = ?', author) }
-
-  validates :isbn, :title, :abstract, :pages, :genre, :published_on, :total_in_library, :author,
+  # TODO: add :author,
+  validates :isbn, :title, :abstract, :pages, :genre, :published_on, :total_in_library,
             presence: true
 
   validates :abstract,

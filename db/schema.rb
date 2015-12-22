@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151221142544) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "isbn"
+    t.integer  "author_id"
     t.string   "genre"
     t.text     "abstract"
     t.string   "image_cover_url"
