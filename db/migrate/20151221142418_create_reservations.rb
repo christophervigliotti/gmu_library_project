@@ -4,10 +4,8 @@ class CreateReservations < ActiveRecord::Migration
       #t.primary_key :id
       t.date :reserved_on
       t.date :due_on
-      t.integer :user_id
-      t.integer :book_id
-      t.datetime :created_at
-      t.datetime :updated_at
+      t.references :user, index: true, foreign_key: true
+      t.references :book, index: true, foreign_key: true
 
       t.timestamps null: false
     end

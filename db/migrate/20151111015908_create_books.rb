@@ -3,8 +3,9 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.string :title
       t.integer :pages
-      t.decimal :price
+      #t.decimal :price
       t.timestamps null: false
     end
+
   end
 end

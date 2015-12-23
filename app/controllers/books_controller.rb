@@ -3,7 +3,6 @@ class BooksController < ApplicationController
   before_action :set_book, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @available_at = Time.now
     @books = Book.order(:title).page(params[:page])
   end
 
@@ -48,7 +47,7 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author_id, :pages, :price, :isbn, :genre, :abstract, :image_cover_url, :published_on, :total_in_library)
+    params.require(:book).permit(:title, :author_id, :pages, :isbn, :genre, :abstract, :image_cover_url, :published_on, :total_in_library)
   end
 
 end

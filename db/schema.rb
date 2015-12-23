@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221142544) do
+ActiveRecord::Schema.define(version: 20151223200738) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -27,17 +27,18 @@ ActiveRecord::Schema.define(version: 20151221142544) do
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.integer  "pages"
-    t.decimal  "price"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "isbn"
-    t.integer  "author_id"
     t.string   "genre"
     t.text     "abstract"
     t.string   "image_cover_url"
     t.date     "published_on"
     t.integer  "total_in_library"
+    t.integer  "author_id"
   end
+
+  add_index "books", ["author_id"], name: "index_books_on_author_id"
 
   create_table "reservations", force: :cascade do |t|
     t.date     "reserved_on"
@@ -47,6 +48,9 @@ ActiveRecord::Schema.define(version: 20151221142544) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "reservations", ["book_id"], name: "index_reservations_on_book_id"
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -44,100 +44,100 @@ buddha = Author.where(name: 'Siddhartha Gautama').first_or_create!(
 )
 
 #puts 'seeds.rb: adding books...'
+puts '* * * * *'
 
 hob = Book.where(title: 'Hobbits Take The Long Way').first_or_create!(
     title:'Hobbits Take The Long Way',
-    author: toklien,
+    author_id: toklien.id,
     pages:384,
-    price:22.68,
     abstract: 'Gandalful and his pal Billy almost get killed several times, ride on giant eagles.  There is resolution.',
     isbn: '9780582186552',
     genre: 'Fantasy',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
-
+puts '* * * * *'
 
 lotr1 = Book.where(title: 'Enough With The Rings: The Fellowship Of The Thing').first_or_create!(
     title:'Enough With The Rings: The Fellowship Of The Thing',
-    author:toklien,
+    author_id:toklien.id,
     pages:999,
-    price:22.68,
     abstract: 'Gandalful and Freddy almost get killed several times, and there is walking, and there is no resolution.',
     isbn: '9780582186551',
     genre: 'Fantasy',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+puts '* * * * *'
 
 lotr2 = Book.where(title: 'Enough With The Rings: The Two (Dozen) Hours').first_or_create!(
     title:'Enough With The Rings: The Two (Dozen) Hours',
-    author:toklien,
+    author_id:toklien.id,
     pages:999,
-    price:22.68,
     abstract: 'Gandalful and Freddy continue their adventure, almost getting killed several times, and there is more walking, and there is still no resolution.',
     isbn: '9780582186550',
     genre: 'Fantasy',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+puts '* * * * *'
 
 lotr3 = Book.where(title: 'Enough With The Rings: Return Of The Things').first_or_create!(
     title:'Enough With The Rings: Return Of The Things',
-    author:toklien,
+    author_id:toklien.id,
     pages:999,
-    price:22.68,
     abstract: 'Gandalful Freddy continue to continue their adventure, almost getting killed several more times, and there is even more walking, and Billy loses his finger and rides on giant eagles.  There is resolution.',
     isbn: '9780582186549',
     genre: 'Fantasy',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+puts '* * * * *'
 
 atlas = Book.where(title: 'Atlas Orange').first_or_create!(
     title:'Atlas Orange',
-    author: rynd,
+    author_id: rynd.id,
     pages:1200,
-    price: 18.81,
     abstract: "It's a story...or is it?",
     isbn: '9780582186548',
     genre: 'Serious Stuff',
     published_on: Date.new(1972,12,31),
     total_in_library: 1
 )
+puts '* * * * *'
 
 ender = Book.where(title: "Bender's Game").first_or_create!(
     title:"Bender's Game",
-    author: card,
+    author_id: card.id,
     pages:352,
-    price:4.83,
     abstract: 'Harrison Ford plays a supporting character.  He seems upset.',
     isbn: '9780582186547',
     genre: 'Science Fiction',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+puts '* * * * *'
 
 hamlet = Book.where(title: 'Green Eggs and Hamlet').first_or_create!(
     title:'Green Eggs and Hamlet',
-    author: shakes,
+    author_id: shakes.id,
     pages:342,
-    price:5.34,
     abstract: 'This book is really, really good.',
     isbn: '9780582186546',
     genre: 'Serious Stuff',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+puts '* * * * *'
 
 wimpy = Book.where(title: 'Diary Of A Wimpy').first_or_create!(
     title:'Diary Of A Wimpy',
-    author: kinny,
+    author_id: kinny.id,
     pages:12,
-    price:9.23,
     abstract: "A behind-the-scenes, tell-all biography of an overweight comedian.",
     isbn: '9780582186545',
     genre: 'History',
     published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+puts '* * * * *'
