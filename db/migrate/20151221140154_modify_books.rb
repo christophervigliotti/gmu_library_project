@@ -7,7 +7,6 @@ class ModifyBooks < ActiveRecord::Migration
     add_column :books, :image_cover_url, :string
     add_column :books, :published_on, :date
     add_column :books, :total_in_library, :integer
-    # add_column :books, :created_at, :datetime
-    # add_column :books, :updated_at, :datetime
+    add_foreign_key :books, :authors
   end
 end

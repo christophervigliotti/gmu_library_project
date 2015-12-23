@@ -1,4 +1,5 @@
-# authors
+#puts 'seeds.rb: adding authors...'
+
 toklien = Author.where(name: 'Jay Arrrgh Arrrgh Tolkien').first_or_create!(
     name: 'Jay Arrrgh Arrrgh Tolkien',
     dob: Date.new(1972,12,31),
@@ -42,7 +43,8 @@ buddha = Author.where(name: 'Siddhartha Gautama').first_or_create!(
     image_url: 'http://mysticmedusa.com/wp-content/uploads/2010/02/buddha3.jpg'
 )
 
-#books
+#puts 'seeds.rb: adding books...'
+
 hob = Book.where(title: 'Hobbits Take The Long Way').first_or_create!(
     title:'Hobbits Take The Long Way',
     author: toklien,
@@ -51,9 +53,11 @@ hob = Book.where(title: 'Hobbits Take The Long Way').first_or_create!(
     abstract: 'Gandalful and his pal Billy almost get killed several times, ride on giant eagles.  There is resolution.',
     isbn: '9780582186552',
     genre: 'Fantasy',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+
+
 lotr1 = Book.where(title: 'Enough With The Rings: The Fellowship Of The Thing').first_or_create!(
     title:'Enough With The Rings: The Fellowship Of The Thing',
     author:toklien,
@@ -62,9 +66,10 @@ lotr1 = Book.where(title: 'Enough With The Rings: The Fellowship Of The Thing').
     abstract: 'Gandalful and Freddy almost get killed several times, and there is walking, and there is no resolution.',
     isbn: '9780582186551',
     genre: 'Fantasy',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+
 lotr2 = Book.where(title: 'Enough With The Rings: The Two (Dozen) Hours').first_or_create!(
     title:'Enough With The Rings: The Two (Dozen) Hours',
     author:toklien,
@@ -73,9 +78,10 @@ lotr2 = Book.where(title: 'Enough With The Rings: The Two (Dozen) Hours').first_
     abstract: 'Gandalful and Freddy continue their adventure, almost getting killed several times, and there is more walking, and there is still no resolution.',
     isbn: '9780582186550',
     genre: 'Fantasy',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
+
 lotr3 = Book.where(title: 'Enough With The Rings: Return Of The Things').first_or_create!(
     title:'Enough With The Rings: Return Of The Things',
     author:toklien,
@@ -84,7 +90,7 @@ lotr3 = Book.where(title: 'Enough With The Rings: Return Of The Things').first_o
     abstract: 'Gandalful Freddy continue to continue their adventure, almost getting killed several more times, and there is even more walking, and Billy loses his finger and rides on giant eagles.  There is resolution.',
     isbn: '9780582186549',
     genre: 'Fantasy',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
 
@@ -96,7 +102,7 @@ atlas = Book.where(title: 'Atlas Orange').first_or_create!(
     abstract: "It's a story...or is it?",
     isbn: '9780582186548',
     genre: 'Serious Stuff',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 1
 )
 
@@ -108,7 +114,7 @@ ender = Book.where(title: "Bender's Game").first_or_create!(
     abstract: 'Harrison Ford plays a supporting character.  He seems upset.',
     isbn: '9780582186547',
     genre: 'Science Fiction',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
 
@@ -120,7 +126,7 @@ hamlet = Book.where(title: 'Green Eggs and Hamlet').first_or_create!(
     abstract: 'This book is really, really good.',
     isbn: '9780582186546',
     genre: 'Serious Stuff',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )
 
@@ -132,6 +138,6 @@ wimpy = Book.where(title: 'Diary Of A Wimpy').first_or_create!(
     abstract: "A behind-the-scenes, tell-all biography of an overweight comedian.",
     isbn: '9780582186545',
     genre: 'History',
-    published_on: '1968',
+    published_on: Date.new(1972,12,31),
     total_in_library: 5
 )

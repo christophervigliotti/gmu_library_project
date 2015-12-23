@@ -1,11 +1,7 @@
 class Book < ActiveRecord::Base
 
-  #self.primary_key = book_id
+  belongs_to :author
 
-  has_one :author
-  #has_many :reservations
-
-  # TODO: add :author,
   validates :isbn, :title, :abstract, :pages, :genre, :published_on, :total_in_library,
             presence: true
 

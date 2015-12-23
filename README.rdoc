@@ -4,11 +4,18 @@ Progress
 
     Models
 
-        Created or modified as-needed
-        Associations defined
-        Validations added to model
-        Create crud for all entities
-        create seeds
+        DONE Created or modified as-needed
+        DONE Associations defined
+        DONE Validations added to model
+        DONE Create crud for all entities
+        DONE create seeds
+
+    Book
+        DONE CRUD
+
+    cleanup
+
+        remove price attribute from Book
 
 Requirements
 
